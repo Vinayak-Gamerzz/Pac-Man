@@ -116,9 +116,9 @@ function updateIcon() {
   const isDark = document.documentElement.classList.contains('dark');
 
   if (isDark) {
-    settingBtn.src = './assets/images/icon/settings-white.svg';
+    settingBtn.src = '.settings-white.svg';
 } else {
-    settingBtn.src = './assets/images/icon/settings-icon.svg';
+    settingBtn.src = '.settings-icon.svg';
 }
 
 }

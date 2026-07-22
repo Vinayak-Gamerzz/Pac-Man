@@ -55,3 +55,11 @@ body {
     text-decoration: none;
 
 }
+
+.text {
+
+    position:absolute;
+    top: 300px;
+    right: 1200px
+
+}
