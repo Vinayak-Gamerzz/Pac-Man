@@ -1,0 +1,566 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap');
+
+:root {
+    --txt:rgb(0, 0, 0);
+
+    --bg: rgb(255, 255, 255);
+
+    --border-color: rgb(0, 0, 0);
+    
+    --accent-color: rgb(32, 128, 192);
+}
+
+:root.dark {
+    --txt: rgb(255, 255, 255);
+
+    --bg: rgb(0, 0, 0);
+
+    --border-color: var(--accent-color);
+
+    transition: 1s ease-in-out;
+}
+
+.comic-relief-regular {
+  font-family: "Comic Relief", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.comic-relief-bold {
+  font-family: "Comic Relief", system-ui;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.inconsolata {
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+}
+
+body {
+    font-family: "Inconsolata";
+    
+    background-color: rgb(31, 29, 29);
+}
+
+/* loadial Loading window */
+.load-window {
+    display: flex;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgb(31, 29, 29);
+    outline: 0.3vw solid rgb(32, 128, 192);
+
+    z-index: 9999;
+}
+
+.load-window.disappear {
+    animation: slideUp 1s ease-in-out forwards;
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-110vh);
+    }
+}
+
+.load-box {
+    position: absolute;
+    top: 45%;
+    left: 45%;
+
+    font-size: 2.5vw;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+
+    padding: 15px 10px;
+
+    background-color: rgb(32, 128, 192);
+    outline: 0.3vw solid rgb(0, 0, 0);
+    box-shadow: 0.9vw 0.9vw 0px 0px rgb(0, 0, 0);
+
+    animation: bounce 1s ease-in-out infloade;
+
+    z-index: 9999;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(20px);
+    }
+    50% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(20px);
+    }
+}
+
+/* Progress bar */
+.progress-bar {
+    position: absolute;
+    left: 2.5%;
+    bottom: 5%;
+
+    width: 95%;
+    height: 4%;
+
+    background-color: white;
+    outline: 0.3vw solid rgb(0, 0, 0);
+    box-shadow: 0.7vw 0.7vw 0px 0px rgb(0, 0, 0);
+
+    z-index: 9999;
+}
+
+.progression {
+    position: absolute;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-image: 
+    linear-gradient(to right, rgb(128, 151, 255), rgb(83, 71, 255));
+
+    animation: progressExpand 1.6s ease-in-out;
+
+    z-index: 9999;
+}
+
+@keyframes progressExpand {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+/* ---------- Nav bar ---------- */
+.nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 10%;
+
+    outline: 0.3vw solid var(--border-color);
+    box-shadow: 0.6vw 0.6vw 0px 0px var(--border-color);
+    background-color: var(--bg);
+
+    transition: 1s ease-in-out;
+
+    z-index: 10;
+}
+
+.nav-brand {
+    position: absolute;
+    top: 0;
+    left: 45%;
+
+    margin: 0;
+    width: 100px;
+
+    color: white;
+    mix-blend-mode: difference;
+
+    font-size: 5vw;
+    font-weight: 800;
+    letter-spacing: -0.08rem;
+    text-transform: uppercase;
+}
+
+/* ---------- Main window ---------- */
+.main-window-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    overflow: hidden;
+
+    width: 100%;
+    height: 100%;
+}
+
+/* ---------- Settings ----------(10-dashes)*/
+.settings-icon {
+    position: absolute;
+    top: 5%;
+    right: 0;
+
+    width: 5%;
+    height: 80%;
+
+    transition: 1s ease-in-out;
+}
+
+.settings-icon.clicked {
+    animation: spin 0.5s ease-in-out;
+}
+
+.settings-icon.clickedRev {
+    animation: spinRev 0.5s ease-in-out;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spinRev {
+        0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+.settings {
+    position: absolute;
+    top: 1%;
+    right: 0%;
+
+    height: 100%;
+    width: 20%;
+
+    transform: translateX(0px);
+
+    background-color: var(--bg);
+    outline: 4px solid var(--border-color);
+
+    transition: 1s ease-in-out;
+
+    z-index: 99;
+} 
+
+.settings.hidden {
+    transform: translateX(100%);
+}
+
+.settings-side-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 99;
+}
+
+.title-settings {
+    position: absolute;
+    top: 10%;
+    left: 25%;
+
+    color: var(--txt);
+    mix-blend-mode: difference;
+
+    font-size: 3vw;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: underline;
+    letter-spacing: -0.1rem;
+
+    transition: 1s ease-in-out;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 20%;
+    left: 1%;
+
+    font-size: 2vw;
+
+    color: var(--txt);
+    mix-blend-mode: difference;
+
+    transition: 1s ease-in-out;
+}
+
+.toggle-button {
+    position: absolute;
+    top: 21%;
+    left: 60%;
+
+    width: 20%;
+    height: 3%;
+    border-radius: 1vw;
+
+    background-color: rgb(131, 130, 130);
+    outline: 0.2vw solid var(--border-color);
+
+    transition: 0.5s ease-in-out;
+}
+
+.toggleable-button {
+    position: absolute;
+    top: 3%;
+    left: 3%;
+
+    width: 30%;
+    height: 90%;
+
+    border-radius: 50%;
+
+    background-color: black;
+
+    transition: 0.5s ease-in-out;
+}
+
+.toggleable-button.clicked {
+    transform: translateX(200%);
+}
+
+/* ---------- Game Page Window ---------- */
+.game-page-window {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 1;
+}
+
+.loop-background {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+
+    place-items: center;
+
+    min-width: 100%;
+    min-height: 100%;
+
+    z-index: -2;
+}
+
+.game-selection-window {
+    display: block;
+
+    position: absolute;
+    top: 15%;
+    left: 20%;
+    width: 60%;
+    height: 75%;
+
+    background-color: rgb(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    overflow: hidden;
+
+    outline: 0.3vw solid var(--border-color);
+    box-shadow: 0.7vw 0.7vw 0px 0px var(--border-color);
+
+    transition: 1s ease-in-out;
+}
+
+.game-container {
+    position: absolute;
+    top: 5%;
+    left: 9%;
+
+    display: grid;
+    row-gap: 3vw;
+    column-gap: 7vw;
+    grid-template-rows: repeat(2, 13vw);
+    grid-template-columns: repeat(3, 12vw);
+
+    margin: 0;
+
+    width: 200%;
+    height: 100%;
+
+    transition: 0.5s ease-in-out;
+}
+
+/* Snake */
+.snake-game {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.4vw;
+
+    text-align: center;
+    text-decoration: none;
+
+    background-color: rgb(255, 255, 255, 0.15);
+    outline: 0.2vw solid var(--border-color);
+    box-shadow: 0.7vw 0.7vw 0px 0px var(--border-color);
+
+    transition: 0.2s ease-in-out;
+}
+
+.snake-game:hover {
+    transform: translate(0.2vw, 0.2vw);
+    box-shadow: 0.5vw 0.5vw 0px 0px var(--border-color);
+}
+
+.snake-game:active {
+    transform: translate(0.7vw, 0.7vw);
+    box-shadow: none;
+}
+
+.snake-img {
+    width: 90%;
+    height: 75%;
+}
+
+.snake-title {
+    font-family: "Comic Relief";
+
+    color: black;
+
+    font-size: 2.5vw;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* Tetris */
+.tetris-game {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.4vw;
+
+    text-align: center;
+    text-decoration: none;
+
+    background-color: rgb(255, 255, 255, 0.15);
+    outline: 0.2vw solid var(--border-color);
+    box-shadow: 0.7vw 0.7vw 0px 0px var(--border-color);
+
+    transition: 0.2s ease-in-out;
+}
+
+.tetris-game:hover {
+    transform: translate(0.2vw, 0.2vw);
+    box-shadow: 0.5vw 0.5vw 0px 0px var(--border-color);
+}
+
+.tetris-game:active {
+    transform: translate(0.7vw, 0.7vw);
+    box-shadow: none;
+}
+
+.tetris-img {
+    width: 90%;
+    height: 75%;
+}
+
+.tetris-title {
+    font-family: "Comic Relief";
+
+    color: black;
+
+    font-size: 2.5vw;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* gravity Game */
+.gravity-game {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.4vw;
+
+    text-align: center;
+    text-decoration: none;
+
+    background-color: rgb(255, 255, 255, 0.15);
+    outline: 0.2vw solid var(--border-color);
+    box-shadow: 0.7vw 0.7vw 0px 0px var(--border-color);
+
+    transition: 0.2s ease-in-out;
+}
+
+.gravity-game:hover {
+    transform: translate(0.2vw, 0.2vw);
+    box-shadow: 0.5vw 0.5vw 0px 0px var(--border-color);
+}
+
+.gravity-game:active {
+    transform: translate(0.7vw, 0.7vw);
+    box-shadow: none;
+}
+
+.gravity-img {
+    width: 90%;
+    height: 75%;
+}
+
+.gravity-title {
+    font-family: "Comic Relief";
+
+    color: black;
+
+    font-size: 2.5vw;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* PI game */
+.PI-sequencing-game {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.4vw;
+
+    text-align: center;
+    text-decoration: none;
+
+    background-color: rgb(255, 255, 255, 0.15);
+    outline: 0.2vw solid var(--border-color);
+    box-shadow: 0.7vw 0.7vw 0px 0px var(--border-color);
+
+    transition: 0.2s ease-in-out;
+}
+
+.PI-sequencing-game:hover {
+    transform: translate(0.2vw, 0.2vw);
+    box-shadow: 0.5vw 0.5vw 0px 0px var(--border-color);
+}
+
+.PI-sequencing-game:active {
+    transform: translate(0.7vw, 0.7vw);
+    box-shadow: none;
+}
+
+.PI-img {
+    width: 100%;
+    height: 72%;
+
+    color: black;
+    font-size: 8vw;
+}
+
+.PI-title {
+    font-family: "Comic Relief";
+
+    color: black;
+
+    font-size: 2.5vw;
+    text-transform: uppercase;
+    font-weight: 600;
+}
