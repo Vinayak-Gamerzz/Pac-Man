@@ -22,3 +22,36 @@ body {
     border-radius: 25px;
 
 }
+
+#board div {
+
+    width :180px;
+    height: 180px;
+    background-image: url(./pipe.png);
+    background-size: cover;
+
+}
+
+#board div img {
+
+    width:100px;
+    height: 100px;
+
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+
+}
+
+.btn {
+
+    padding: 12px 24px;
+    background: lightblue;
+    color:white;
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
+    text-decoration: none;
+
+}

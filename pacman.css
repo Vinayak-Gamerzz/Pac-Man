@@ -1,11 +1,55 @@
 body {
 
     text-align: center;
+    background: blue;
 
 }
 
 #board {
 
     background-color: black;
+
+}
+
+.btn {
+
+    padding: 12px 24px;
+    background: lightblue;
+    color:white;
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
+    text-decoration: none;
+
+}
+
+.cards {
+
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+
+}
+
+.card {
+
+    width: 300px;
+    background: lavender;
+    padding: 25px;
+    border-radius: 15px;
+    transition: .5s;
+
+}
+
+.card:hover {
+
+    transform: translateY(-10px)
+
+}
+
+.card h2 {
+
+    margin-bottom: 12px;
 
 }

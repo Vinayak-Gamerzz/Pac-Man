@@ -179,6 +179,14 @@ function move() {
     pacman.x += pacman.velocityX;
     pacman.y += pacman.velocityY;
 
+    // Teleport Tunnel
+    if (pacman.x + pacman.width < 0) {
+        pacman.x = boardWidth;
+    }
+    else if (pacman.x > boardWidth) {
+        pacman.x = -pacman.width;
+    }
+
     //check wall collisions
     for (let wall of walls.values()) {
         if (collision(pacman, wall)) {

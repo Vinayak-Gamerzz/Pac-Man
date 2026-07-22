@@ -1,7 +1,10 @@
 let currMoleTile;
 let currPlantTile;
+let score = 0;
+let gameOver = false;
+
 window.onload = function() {
-    SetGame();
+    setGame();
 
 }
 
@@ -10,12 +13,12 @@ function setGame() {
         //<div id="0-8"></div>
         let tile = document.createElement("div");
         tile.id = i.toString();
-        tile.addEventListener("click, seclectTile");
+        tile.addEventListener("click", selectTile);
         document.getElementById("board").appendChild(tile);
 
     }
-    setInterval(SetMole, 1000); // 1000 mm = 1s, every 1s call setMole
-    setInterval(SetPlant, 2000); // 2000 mm = 2s, " " " " " " " " " " 
+    setInterval(setMole, 1000); // 1000 miliseconds = 1 second, every 1 second call setMole
+    setInterval(setPlant, 2000); // 2000 miliseconds = 2 seconds, every 2 second call setPlant
 
 }
 
@@ -57,7 +60,7 @@ function setPlant() {
 
     }
     let plant = document.createElement("img");
-    plant.src = "./piranha-plant.png"
+    plant.src = "./piranha-plant.png";
 
     let num = getRandomTile();
     if (currMoleTile && currMoleTile.id == num) {
@@ -66,6 +69,7 @@ function setPlant() {
     }
     currPlantTile = document.getElementById(num);
     currPlantTile.appendChild(plant);
+
 }
 
 function selectTile() {
@@ -73,13 +77,13 @@ function selectTile() {
         return;
 
     }
-    if(this == currMoleTile) {
-        score +=10;
-        document.getElementById("score").innerText = score.tosString(); //update score in html
+    if (this == currMoleTile) {
+        score += 10;
+        document.getElementById("score").innerText = score.toString(); //update score html
 
     }
     else if (this == currPlantTile) {
-        document.getElementById("score").innerText = "GAME OVER: " + score.toString();
+        document.getElementById("score").innerText = "GAME OVER: " + score.toString(); //update score html
         gameOver = true;
 
     }
