@@ -2,7 +2,8 @@
 
 i initially started this project only for pac man but it won't be worth it so i thought to make every single js game which i can make to do it so i will be able to practice and learn more about js, it has got 3 games rn, Pacman, Whack a mole, and the snake game, i have learned a lot about functions, move, if, return, etc. etc. nd ill make more games in this and js is pretty cool or maybe like what to say it isn't as easy as html, css, python but not hard as c++, or java, it comes in the medium difficulty, so im learning js that's why i made this and will update this many times cause i am learning it and will update it till i don't learn js perfectly
 
-<img width="1847" height="866" alt="image" src="https://github.com/user-attachments/assets/95a9b1f5-a8ab-4c41-a63a-a376079eb218" />
+<img width="1847" height="856" alt="image" src="https://github.com/user-attachments/assets/7a0a5e5b-4c39-4e58-88aa-9fb301bb5d41" />
+
 
 The currently available games are :
 
@@ -40,6 +41,18 @@ you get 3 lives here and after 3 lives you lose hahahahaha
 it is not a normal Pac Man it is Sonic Speed Pac Man, bet you can't finish this, also it has less special food
 
 <img width="1812" height="870" alt="image" src="https://github.com/user-attachments/assets/6478b7c0-4173-46dd-8dc7-66770bf2ed42" />
+
+# Doodle
+
+it is an normal doodle game and you can go above the screen too which increases more losing chance and you go high in speed up hahahahahah (i want everyone loses)
+
+<img width="1826" height="852" alt="image" src="https://github.com/user-attachments/assets/ef413f36-edbc-47ce-8c60-9f77136495fd" />
+
+# Breakout
+
+it is a breakout game but you'll need to spamm arrow key or can press it as it's hard to win this!
+
+<img width="1832" height="852" alt="image" src="https://github.com/user-attachments/assets/8b4773da-9694-4a65-8fd9-c72cdea2e12c" />
 
 
 # AI-USE
