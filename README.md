@@ -37,6 +37,8 @@ A Pac Man game on JS with no extra thing |Y-Y|
 
 you get 3 lives here and after 3 lives you lose hahahahaha
 
+it is not a normal Pac Man it is Sonic Speed Pac Man, bet you can't finish this, also it has less special food
+
 <img width="1812" height="870" alt="image" src="https://github.com/user-attachments/assets/6478b7c0-4173-46dd-8dc7-66770bf2ed42" />
 
 
