@@ -65,7 +65,7 @@ window.onload = function() {
     bottomPipeImg.src = "./bottompipe.png";
 
     requestAnimationFrame(update);
-    setInterval(placePipes, 1500); //every 1.5 seconds
+    setInterval(placePipes, 2000); //every 1.5 seconds
     document.addEventListener("keydown", moveBird);
 
 }
@@ -144,7 +144,7 @@ function placePipes() {
     // 0 -> -128 (pipeHeight/4)
     // 1 -> -128 - 256 (pipeHeight/4 - pipeHeight/2) = -3/4 pipeHeight
     let randomPipeY = pipeY - pipeHeight/4 - Math.random()*(pipeHeight/2);
-    let openingSpace = board.height/4;
+    let openingSpace = 190;
 
     let topPipe = {
 
@@ -176,7 +176,8 @@ function moveBird(e) {
 
     if (e.code == "Space" || e.code == "ArrowUp" || e.code == "KeyX") {
         //jump
-        velocityY = -6;
+        velocityY = -7;
+gravity = 0.35;
 
         //reset game
         if (gameOver) {

@@ -69,7 +69,7 @@ window.onload = function() {
         ghost.updateDirection(newDirection);
     }
     update();
-    document.addEventListener("keyup", movePacman);
+    document.addEventListener("keydown", movePacman);
 }
 
 function loadImages() {
@@ -145,7 +145,7 @@ function update() {
     }
     move();
     draw();
-    setTimeout(update, 50); //1000/50 = 20 FPS
+    requestAnimationFrame(update);
 }
 
 function draw() {
